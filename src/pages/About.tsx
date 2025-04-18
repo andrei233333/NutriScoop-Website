@@ -79,15 +79,17 @@ const About = () => {
             <div className={`relative transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100 delay-300' : 'translate-y-10 opacity-0'}`}>
               <div className="absolute -top-8 -left-8 w-40 h-40 bg-nutri-orange/10 rounded-full z-0"></div>
               <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-nutri-green/10 rounded-full z-0"></div>
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform transition-all duration-700 hover:scale-[1.02]">
-                <img 
-                  src="/images/logo/1000171879.png" 
-                  alt="NutriScoop Staff" 
-                  className="w-full h-auto object-contain bg-white"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
-                  }}
-                />
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform transition-all duration-700 hover:scale-[1.02] bg-white p-8 sm:p-12">
+                <div className="aspect-square w-full max-w-[500px] mx-auto">
+                  <img 
+                    src="/images/logo/icecream.png" 
+                    alt="NutriScoop Staff" 
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
