@@ -47,7 +47,7 @@ A modern, responsive website for NutriScoop, a plant-based ice cream company spe
 
 ## Deployment
 
-This website is deployed on GitHub Pages and can be accessed at [https://nutriscoop.github.io/](https://nutriscoop.github.io/)
+This website is deployed on GitHub Pages and can be accessed at [https://andrei233333.github.io/NutriScoop-Website/](https://andrei233333.github.io/NutriScoop-Website/)
 
 ## License
 
