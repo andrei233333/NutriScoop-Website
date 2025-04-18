@@ -96,7 +96,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground min-h-screen;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -112,26 +112,69 @@
 }
 
 @layer components {
-  .responsive-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  /* Main Container Classes */
+  .main-container {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
-  .mobile-friendly-padding {
-    @apply py-8 md:py-16;
+
+  .container-xl {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
-  .mobile-friendly-spacing {
-    @apply space-y-8 md:space-y-12;
+
+  .container-lg {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
-  .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+
+  .container-md {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
-  .responsive-flex {
-    @apply flex flex-col md:flex-row items-center;
+
+  .container-sm {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
+  /* Container Classes */
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Centering Utilities */
+  .center-content {
+    @apply flex items-center justify-center;
+  }
+
+  .center-text {
+    @apply text-center;
+  }
+
+  /* Section Classes */
+  .section {
+    @apply w-full py-16 md:py-24;
+  }
+
+  .section-content {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  /* Grid Classes */
+  .grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+  }
+
+  .grid-features {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10;
+  }
+
+  /* Card Classes */
+  .card {
+    @apply bg-white rounded-2xl p-6 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2;
+  }
+
+  .card-content {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  /* Text Classes */
   .text-responsive {
     @apply text-base sm:text-lg md:text-xl;
   }
@@ -142,5 +185,18 @@
   
   .subheading-responsive {
     @apply text-xl sm:text-2xl md:text-3xl font-semibold;
+  }
+
+  /* Spacing Classes */
+  .spacing-sm {
+    @apply space-y-4 sm:space-y-6;
+  }
+
+  .spacing-md {
+    @apply space-y-6 sm:space-y-8;
+  }
+
+  .spacing-lg {
+    @apply space-y-8 sm:space-y-12;
   }
 }

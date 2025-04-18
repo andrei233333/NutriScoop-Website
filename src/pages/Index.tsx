@@ -10,8 +10,6 @@ const Index = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
@@ -26,34 +24,34 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-nutri-beige to-white">
       <Header />
       
-      {/* Hero Section - Full Screen */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-screen center-content overflow-hidden">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/hero-bg.jpg')] bg-cover bg-center opacity-10 z-0"></div>
         
         {/* Decorative elements */}
         <div className="absolute top-1/4 right-1/4 w-16 sm:w-20 h-16 sm:h-20 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
         <div className="absolute bottom-1/3 left-1/4 w-12 sm:w-16 h-12 sm:h-16 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
         
-        <div className="responsive-container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="container max-w-7xl relative z-10">
+          <div className="flex flex-col items-center justify-center">
             <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="inline-block px-3 sm:px-5 py-1.5 sm:py-2 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-xs sm:text-sm mb-4 sm:mb-6">
+              <div className="center-text inline-block px-3 sm:px-5 py-1.5 sm:py-2 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-xs sm:text-sm mb-4 sm:mb-6">
                 PLANT-BASED • NUTRITIOUS • DELICIOUS
               </div>
               
-              <h1 className="heading-responsive mb-4 sm:mb-6 leading-tight">
+              <h1 className="heading-responsive mb-4 sm:mb-6 leading-tight center-text">
                 <span className="text-nutri-green">NutriScoop:</span> <span className="text-nutri-orange">Premium</span> Plant-Based Ice Cream
-          </h1>
+              </h1>
               
-              <div className="flex justify-center mb-6 sm:mb-10">
+              <div className="center-content mb-6 sm:mb-10">
                 <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
               </div>
               
-              <p className="text-responsive text-gray-700 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+              <p className="text-responsive text-gray-700 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed center-text">
                 Experience ice cream reinvented – silky smooth, impossibly creamy, and crafted purely from plants. Savor every spoonful of bliss while feeling good about your choices for your body and the planet.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 sm:px-0">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
                   <Link to="/products">
                     Explore Our Flavors <ArrowRight className="ml-2 h-5 w-5" />
@@ -85,135 +83,141 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="mobile-friendly-padding bg-gradient-to-b from-white to-nutri-beige/30 relative overflow-hidden">
+      <section id="features" className="section bg-gradient-to-b from-white to-nutri-beige/30 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-nutri-green/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-nutri-orange/5 rounded-full translate-y-1/2 -translate-x-1/3"></div>
         
-        <div className="responsive-container relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="subheading-responsive text-nutri-green mb-4">Why Choose NutriScoop?</h2>
-            <p className="text-responsive text-gray-600 max-w-2xl mx-auto">Our ice cream delivers the perfect balance of taste and nutrition</p>
+        <div className="container max-w-7xl relative z-10">
+          <div className="center-content flex-col mb-12 sm:mb-16">
+            <h2 className="subheading-responsive text-nutri-green mb-4 center-text">Why Choose NutriScoop?</h2>
+            <p className="text-responsive text-gray-600 max-w-2xl mx-auto center-text">Our ice cream delivers the perfect balance of taste and nutrition</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Plant-Based Feature */}
-            <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-nutri-green/10 to-transparent rounded-bl-3xl -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700"></div>
-              
-              <div className="bg-gradient-to-br from-nutri-green/20 to-nutri-green/5 w-16 sm:w-24 h-16 sm:h-24 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 transform group-hover:rotate-3 transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 sm:h-12 w-8 sm:w-12 text-nutri-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 12V8a2 2 0 0 0-2-2h-5.5a1 1 0 0 1-.7-.3L9.8 3.7a1 1 0 0 0-.7-.3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.3" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 19h6m-3-3v6" />
-                </svg>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl font-bold text-nutri-green mb-3 sm:mb-4 group-hover:text-nutri-orange transition-colors duration-300">100% Plant-Based</h3>
-              
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                Made exclusively with natural plant ingredients that are better for your health and kinder to our planet.
-              </p>
-              
-              <div className="pt-4 border-t border-gray-100">
-                <ul className="space-y-2">
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Dairy-free alternative
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    No artificial additives
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Environmentally friendly
-                  </li>
-                </ul>
+            <div className="card group relative overflow-hidden">
+              <div className="center-content flex-col">
+                <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-nutri-green/10 to-transparent rounded-bl-3xl -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700"></div>
+                
+                <div className="bg-gradient-to-br from-nutri-green/20 to-nutri-green/5 w-16 sm:w-24 h-16 sm:h-24 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 transform group-hover:rotate-3 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 sm:h-12 w-8 sm:w-12 text-nutri-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 12V8a2 2 0 0 0-2-2h-5.5a1 1 0 0 1-.7-.3L9.8 3.7a1 1 0 0 0-.7-.3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 19h6m-3-3v6" />
+                  </svg>
+                </div>
+                
+                <h3 className="text-xl sm:text-2xl font-bold text-nutri-green mb-3 sm:mb-4 group-hover:text-nutri-orange transition-colors duration-300">100% Plant-Based</h3>
+                
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                  Made exclusively with natural plant ingredients that are better for your health and kinder to our planet.
+                </p>
+                
+                <div className="pt-4 border-t border-gray-100">
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Dairy-free alternative
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      No artificial additives
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Environmentally friendly
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             
             {/* Made with Love Feature */}
-            <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-nutri-orange/10 to-transparent rounded-bl-3xl -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700"></div>
-              
-              <div className="bg-gradient-to-br from-nutri-orange/20 to-nutri-orange/5 w-16 sm:w-24 h-16 sm:h-24 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 transform group-hover:rotate-3 transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 sm:h-12 w-8 sm:w-12 text-nutri-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl font-bold text-nutri-orange mb-3 sm:mb-4 group-hover:text-nutri-green transition-colors duration-300">Made with Love</h3>
-              
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                Every batch of our ice cream is handcrafted with care, attention to detail, and a genuine passion for creating delicious treats.
-              </p>
-              
-              <div className="pt-4 border-t border-gray-100">
-                <ul className="space-y-2">
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Handcrafted recipes
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Attention to detail
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Small batch quality
-                  </li>
-                </ul>
+            <div className="card group relative overflow-hidden">
+              <div className="center-content flex-col">
+                <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-nutri-orange/10 to-transparent rounded-bl-3xl -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700"></div>
+                
+                <div className="bg-gradient-to-br from-nutri-orange/20 to-nutri-orange/5 w-16 sm:w-24 h-16 sm:h-24 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 transform group-hover:rotate-3 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 sm:h-12 w-8 sm:w-12 text-nutri-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                
+                <h3 className="text-xl sm:text-2xl font-bold text-nutri-orange mb-3 sm:mb-4 group-hover:text-nutri-green transition-colors duration-300">Made with Love</h3>
+                
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                  Every batch of our ice cream is handcrafted with care, attention to detail, and a genuine passion for creating delicious treats.
+                </p>
+                
+                <div className="pt-4 border-t border-gray-100">
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Handcrafted recipes
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Attention to detail
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Small batch quality
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             
             {/* Nutritious Feature */}
-            <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-nutri-green/10 to-transparent rounded-bl-3xl -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700"></div>
-              
-              <div className="bg-gradient-to-br from-nutri-green/20 to-nutri-green/5 w-16 sm:w-24 h-16 sm:h-24 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 transform group-hover:rotate-3 transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 sm:h-12 w-8 sm:w-12 text-nutri-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl font-bold text-nutri-green mb-3 sm:mb-4 group-hover:text-nutri-orange transition-colors duration-300">Nutritionally Rich</h3>
-              
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                Packed with essential vitamins, minerals and antioxidants to support your health and wellness goals.
-              </p>
-              
-              <div className="pt-4 border-t border-gray-100">
-                <ul className="space-y-2">
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Vitamin-rich ingredients
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Natural antioxidants
-                  </li>
-                  <li className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Health-focused recipes
-                  </li>
-                </ul>
+            <div className="card group relative overflow-hidden">
+              <div className="center-content flex-col">
+                <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-br from-nutri-green/10 to-transparent rounded-bl-3xl -translate-y-10 translate-x-10 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-700"></div>
+                
+                <div className="bg-gradient-to-br from-nutri-green/20 to-nutri-green/5 w-16 sm:w-24 h-16 sm:h-24 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 transform group-hover:rotate-3 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 sm:h-12 w-8 sm:w-12 text-nutri-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                
+                <h3 className="text-xl sm:text-2xl font-bold text-nutri-green mb-3 sm:mb-4 group-hover:text-nutri-orange transition-colors duration-300">Nutritionally Rich</h3>
+                
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                  Packed with essential vitamins, minerals and antioxidants to support your health and wellness goals.
+                </p>
+                
+                <div className="pt-4 border-t border-gray-100">
+                  <ul className="space-y-2">
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Rich in vitamins
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      High in fiber
+                    </li>
+                    <li className="flex items-center text-gray-600">
+                      <svg className="w-5 h-5 mr-2 text-nutri-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Low glycemic index
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
