@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/NutriScoop-Website/',
+  base: process.env.NODE_ENV === 'production' ? '/NutriScoop-Website/' : '/',
   server: {
     host: true,
     port: 8080,

@@ -10,8 +10,6 @@ const About = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
@@ -27,54 +25,61 @@ const About = () => {
       <Header />
       
       {/* Hero Section - Full Screen */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-nutri-green/5">
+        {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('/images/about-pattern.jpg')] bg-cover bg-center opacity-10 z-0"></div>
         
         {/* Decorative elements */}
-        <div className="absolute top-1/4 right-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-1/3 left-1/4 w-16 sm:w-24 h-16 sm:h-24 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
-        <div className="absolute top-1/3 left-1/5 w-12 sm:w-16 h-12 sm:h-16 bg-nutri-green/15 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
+        <div className="absolute top-1/3 left-1/5 w-16 h-16 bg-nutri-green/15 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
         
-        <div className="responsive-container relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-xs sm:text-sm mb-4 sm:mb-6">
+        <div className="container-xl relative z-10 py-16 sm:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content Section */}
+            <div className={`space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className="inline-block px-4 py-1.5 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-sm">
                 ABOUT US
               </div>
-              <h1 className="heading-responsive text-nutri-green mb-4 sm:mb-6 leading-tight">
-                Crafting <span className="text-nutri-orange">Plant-Based</span> Happiness Since 2025
-        </h1>
-              <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full mb-4 sm:mb-6"></div>
-              <p className="text-responsive text-gray-700 mb-6 sm:mb-8 leading-relaxed">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-nutri-green leading-tight">
+                Crafting <span className="text-nutri-orange">Plant-Based</span> Happiness
+              </h1>
+              <div className="h-1 w-20 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
+              <p className="text-lg text-gray-700 leading-relaxed max-w-2xl">
                 NutriScoop delivers premium plant-based ice cream that celebrates nutrition without compromising on flavor. We're on a mission to change how people think about vegan desserts.
               </p>
-              <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/80 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm">
-                  <Leaf className="h-4 sm:h-5 w-4 sm:w-5 text-nutri-green" />
-                  <span className="text-gray-700 font-medium text-sm sm:text-base">100% Plant-Based</span>
+              
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                  <Leaf className="h-5 w-5 text-nutri-green" />
+                  <span className="text-gray-700 font-medium">100% Plant-Based</span>
                 </div>
-                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/80 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm">
-                  <Heart className="h-4 sm:h-5 w-4 sm:w-5 text-nutri-orange" />
-                  <span className="text-gray-700 font-medium text-sm sm:text-base">Locally Made</span>
+                <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                  <Heart className="h-5 w-5 text-nutri-orange" />
+                  <span className="text-gray-700 font-medium">Locally Made</span>
                 </div>
-                <div className="flex items-center gap-1.5 sm:gap-2 bg-white/80 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm">
-                  <ShieldCheck className="h-4 sm:h-5 w-4 sm:w-5 text-nutri-green" />
-                  <span className="text-gray-700 font-medium text-sm sm:text-base">No Artificial Additives</span>
+                <div className="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                  <ShieldCheck className="h-5 w-5 text-nutri-green" />
+                  <span className="text-gray-700 font-medium">No Artificial Additives</span>
                 </div>
               </div>
+
               <Button 
                 variant="ghost" 
-                className="flex items-center gap-2 text-nutri-green hover:text-nutri-orange"
+                className="flex items-center gap-2 text-nutri-green hover:text-nutri-orange mt-4"
                 onClick={() => scrollToSection('our-story')}
               >
                 Discover our story
-                <ChevronRight className="h-4 sm:h-5 w-4 sm:w-5" />
+                <ChevronRight className="h-5 w-5" />
               </Button>
             </div>
-            <div className={`relative transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100 delay-300' : 'translate-y-10 opacity-0'} mt-8 md:mt-0`}>
-              <div className="absolute -top-6 sm:-top-8 -left-6 sm:-left-8 w-28 sm:w-40 h-28 sm:h-40 bg-nutri-orange/10 rounded-full z-0"></div>
-              <div className="absolute -bottom-6 sm:-bottom-8 -right-6 sm:-right-8 w-28 sm:w-40 h-28 sm:h-40 bg-nutri-green/10 rounded-full z-0"></div>
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl transform transition-all duration-700 hover:scale-[1.02]">
+
+            {/* Image Section */}
+            <div className={`relative transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100 delay-300' : 'translate-y-10 opacity-0'}`}>
+              <div className="absolute -top-8 -left-8 w-40 h-40 bg-nutri-orange/10 rounded-full z-0"></div>
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-nutri-green/10 rounded-full z-0"></div>
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform transition-all duration-700 hover:scale-[1.02]">
                 <img 
                   src="/images/about-hero.jpg" 
                   alt="NutriScoop Ice Cream" 
@@ -88,16 +93,15 @@ const About = () => {
           </div>
         </div>
         
+        {/* Scroll Indicator */}
         <div 
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-10"
           onClick={() => scrollToSection('our-story')}
         >
-          <div className="bg-white/80 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all">
-            <ArrowDown className="h-5 w-5 sm:h-6 sm:w-6 text-nutri-green" />
+          <div className="bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-xl transition-all">
+            <ArrowDown className="h-6 w-6 text-nutri-green" />
           </div>
         </div>
-        
-        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
       
       {/* Our Story Section */}
@@ -169,31 +173,31 @@ const About = () => {
       </section>
       
       {/* Mission & Vision Section */}
-      <section className="mobile-friendly-padding bg-gradient-to-r from-nutri-green/5 to-nutri-orange/5 relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-gradient-to-r from-nutri-green/5 to-nutri-orange/5 relative overflow-hidden">
         <div className="absolute -right-20 sm:-right-32 -top-20 sm:-top-32 w-40 sm:w-64 h-40 sm:h-64 bg-nutri-green/10 rounded-full"></div>
         <div className="absolute -left-20 sm:-left-32 -bottom-20 sm:-bottom-32 w-40 sm:w-64 h-40 sm:h-64 bg-nutri-orange/10 rounded-full"></div>
         
-        <div className="responsive-container relative z-10">
+        <div className="container-xl relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 transform hover:-translate-y-1 transition-transform duration-300 border border-gray-100">
-              <div className="rounded-full bg-nutri-green/10 w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center mb-4 sm:mb-6">
-                <Target className="h-6 sm:h-8 w-6 sm:w-8 text-nutri-green" />
+            <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-10 transform hover:-translate-y-1 transition-transform duration-300 border border-gray-100">
+              <div className="rounded-full bg-nutri-green/10 w-16 h-16 flex items-center justify-center mb-6">
+                <Target className="h-8 w-8 text-nutri-green" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-nutri-green mb-3 sm:mb-4">Our Mission</h3>
-              <div className="h-1 w-10 sm:w-12 bg-nutri-green rounded-full mb-4 sm:mb-6"></div>
-              <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold text-nutri-green mb-4">Our Mission</h3>
+              <div className="h-1 w-12 bg-nutri-green rounded-full mb-6"></div>
+              <p className="text-lg text-gray-600 leading-relaxed">
                 To value customers with an exciting and one of a kind ice cream experience, while
                 promoting healthy and nutritious options that benefit our community.
               </p>
             </div>
             
-            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 transform hover:-translate-y-1 transition-transform duration-300 border border-gray-100">
-              <div className="rounded-full bg-nutri-orange/10 w-12 sm:w-16 h-12 sm:h-16 flex items-center justify-center mb-4 sm:mb-6">
-                <Award className="h-6 sm:h-8 w-6 sm:w-8 text-nutri-orange" />
+            <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-10 transform hover:-translate-y-1 transition-transform duration-300 border border-gray-100">
+              <div className="rounded-full bg-nutri-orange/10 w-16 h-16 flex items-center justify-center mb-6">
+                <Award className="h-8 w-8 text-nutri-orange" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-nutri-orange mb-3 sm:mb-4">Our Vision</h3>
-              <div className="h-1 w-10 sm:w-12 bg-nutri-orange rounded-full mb-4 sm:mb-6"></div>
-              <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold text-nutri-orange mb-4">Our Vision</h3>
+              <div className="h-1 w-12 bg-nutri-orange rounded-full mb-6"></div>
+              <p className="text-lg text-gray-600 leading-relaxed">
                 To be the go-to brand for vegan ice cream, offering a variety of flavors that make it easy
                 for people to make healthier, more sustainable choices. Our goal is to become one of the
                 healthiest and affordable ice creams in the community. We want to bring joy to dessert lovers
@@ -205,38 +209,38 @@ const About = () => {
       </section>
       
       {/* Footer */}
-      <footer className="py-8 sm:py-12 bg-nutri-green text-white">
-        <div className="responsive-container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 pb-8 sm:pb-10 border-b border-white/20">
-            <div>
-              <h4 className="font-bold text-xl sm:text-2xl mb-4 sm:mb-6">NutriScoop</h4>
-              <p className="text-white/80 text-base sm:text-lg">Healthy & Delicious Plant-Based Ice Cream made in Valenzuela City.</p>
+      <footer className="py-12 sm:py-16 bg-nutri-green text-white">
+        <div className="container-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 pb-8 sm:pb-12 border-b border-white/20">
+            <div className="space-y-4">
+              <h4 className="font-bold text-2xl">NutriScoop</h4>
+              <p className="text-white/80 text-lg">Healthy & Delicious Plant-Based Ice Cream made in Valenzuela City.</p>
             </div>
-            <div>
-              <h4 className="font-bold text-lg sm:text-xl mb-4 sm:mb-6">Quick Links</h4>
-              <nav className="space-y-2 sm:space-y-3">
-                <Link to="/" className="block text-white/80 hover:text-white text-base sm:text-lg">Home</Link>
-                <Link to="/about" className="block text-white/80 hover:text-white text-base sm:text-lg">About</Link>
-                <Link to="/products" className="block text-white/80 hover:text-white text-base sm:text-lg">Products</Link>
-                <Link to="/contact" className="block text-white/80 hover:text-white text-base sm:text-lg">Contact</Link>
+            <div className="space-y-4">
+              <h4 className="font-bold text-xl">Quick Links</h4>
+              <nav className="space-y-3">
+                <Link to="/" className="block text-white/80 hover:text-white text-lg transition-colors">Home</Link>
+                <Link to="/about" className="block text-white/80 hover:text-white text-lg transition-colors">About</Link>
+                <Link to="/products" className="block text-white/80 hover:text-white text-lg transition-colors">Products</Link>
+                <Link to="/contact" className="block text-white/80 hover:text-white text-lg transition-colors">Contact</Link>
               </nav>
             </div>
-            <div>
-              <h4 className="font-bold text-lg sm:text-xl mb-4 sm:mb-6">Contact Us</h4>
-              <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-4">
+              <h4 className="font-bold text-xl">Contact Us</h4>
+              <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="text-nutri-orange h-5 w-5" />
-                  <a href="mailto:nutriscoop6@gmail.com" className="text-white/80 hover:text-white text-sm sm:text-base">
+                  <a href="mailto:nutriscoop6@gmail.com" className="text-white/80 hover:text-white text-lg transition-colors">
                     nutriscoop6@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="text-nutri-orange h-5 w-5" />
-                  <p className="text-white/80 text-sm sm:text-base">MXQG+RMR, Karuhatan Rd, Valenzuela, Metro Manila</p>
+                  <p className="text-white/80 text-lg">MXQG+RMR, Karuhatan Rd, Valenzuela, Metro Manila</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="text-nutri-orange h-5 w-5" />
-                  <p className="text-white/80 text-sm sm:text-base">Monday - Sunday | 10 AM to 8 PM</p>
+                  <p className="text-white/80 text-lg">Monday - Sunday | 10 AM to 8 PM</p>
                 </div>
                 <div className="flex gap-4 mt-4">
                   <a
@@ -259,10 +263,10 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="pt-6 sm:pt-10 text-center text-white/80">
-            <p className="text-base sm:text-lg">&copy; 2025 NutriScoop. All rights reserved.</p>
+          <div className="pt-8 text-center text-white/80">
+            <p className="text-lg">&copy; 2025 NutriScoop. All rights reserved.</p>
           </div>
-      </div>
+        </div>
       </footer>
     </div>
   );
