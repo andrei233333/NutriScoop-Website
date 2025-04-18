@@ -25,49 +25,47 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-screen center-content overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white/80 to-nutri-beige/30">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/hero-bg.jpg')] bg-cover bg-center opacity-5 z-0"></div>
         
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 right-1/4 w-20 sm:w-24 h-20 sm:h-24 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-1/3 left-1/4 w-16 sm:w-20 h-16 sm:h-20 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
-        <div className="absolute top-1/3 right-1/3 w-12 sm:w-16 h-12 sm:h-16 bg-nutri-green/15 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
+        {/* Decorative elements with enhanced positioning and animation */}
+        <div className="absolute top-1/4 right-1/4 w-20 sm:w-24 h-20 sm:h-24 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s', animationDuration: '3s'}}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-16 sm:w-20 h-16 sm:h-20 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s', animationDuration: '4s'}}></div>
         
-        <div className="container max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
+        <div className="container max-w-6xl relative z-10 px-4 sm:px-6">
+          <div className="flex flex-col items-center justify-center text-center">
             <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="inline-block px-4 py-2 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-sm sm:text-base mb-6 sm:mb-8">
-                VEGAN • NUTRITIOUS • DELICIOUS
+              <div className="inline-block px-5 py-2 bg-nutri-green/10 rounded-full text-nutri-green font-semibold text-sm sm:text-base mb-8 tracking-wide">
+                PLANT-BASED • NUTRITIOUS • DELICIOUS
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 sm:mb-8">
-                <span className="text-nutri-green">NutriScoop:</span><br />
-                Premium <span className="text-nutri-orange">Vegan Ice Cream</span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-nutri-green leading-tight mb-6">
+                <span className="text-nutri-green block mb-2">NutriScoop</span>
+                <span className="text-nutri-orange">Vegan Ice Cream</span>
               </h1>
               
-              <div className="flex justify-center mb-8 sm:mb-10">
-                <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
+              <div className="flex justify-center mb-8">
+                <div className="h-1.5 w-24 sm:w-32 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
               </div>
               
-              <p className="text-lg sm:text-xl text-gray-700 mb-10 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
-                Experience ice cream reinvented – silky smooth, impossibly creamy,<br className="hidden sm:block" />
-                and crafted purely from plants. Savor every spoonful of bliss while<br className="hidden sm:block" />
-                feeling good about your choices for your body and the planet.
+              <p className="text-xl sm:text-2xl text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Experience ice cream reinvented – silky smooth, impossibly creamy, and crafted purely from plants.
+                <span className="block mt-4 text-lg sm:text-xl text-gray-600">Savor every spoonful of bliss while feeling good about your choices for your body and the planet.</span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-base sm:text-lg px-10 py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
-                  <Link to="/products" className="flex items-center justify-center whitespace-nowrap">
-                    Explore Our Flavors <ArrowRight className="ml-2 h-5 w-5" />
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-xl mx-auto">
+                <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-lg px-10 py-7 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
+                  <Link to="/products" className="flex items-center justify-center">
+                    Explore Our Flavors <ArrowRight className="ml-3 h-6 w-6" />
                   </Link>
                 </Button>
                 <Button 
                   onClick={() => scrollToSection('products')}
                   variant="outline" 
                   size="lg" 
-                  className="border-2 border-nutri-orange text-nutri-orange hover:bg-nutri-orange/10 text-base sm:text-lg px-10 py-6 rounded-full w-full sm:w-auto whitespace-nowrap"
+                  className="border-nutri-orange text-nutri-orange hover:bg-nutri-orange/10 text-lg px-10 py-7 rounded-full w-full sm:w-auto"
                 >
-                  See Our Products
+                  View Menu
                 </Button>
               </div>
             </div>
@@ -75,11 +73,11 @@ const Index = () => {
         </div>
         
         <div 
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-10"
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-10"
           onClick={() => scrollToSection('features')}
         >
-          <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:bg-white">
-            <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-nutri-green" />
+          <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-lg hover:shadow-xl transition-all">
+            <ChevronDown className="h-8 w-8 text-nutri-green" />
           </div>
         </div>
         
@@ -630,7 +628,7 @@ const Index = () => {
           </div>
           <div className="pt-6 sm:pt-10 text-center text-white/80">
             <p className="text-base sm:text-lg">&copy; 2025 NutriScoop. All rights reserved.</p>
-          </div>
+        </div>
         </div>
       </footer>
     </div>
