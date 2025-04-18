@@ -41,7 +41,7 @@ const Index = () => {
               
               <h1 className="heading-responsive mb-4 sm:mb-6 leading-tight center-text">
                 <span className="text-nutri-green">NutriScoop:</span> <span className="text-nutri-orange">Premium</span> Plant-Based Ice Cream
-              </h1>
+          </h1>
               
               <div className="center-content mb-6 sm:mb-10">
                 <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
@@ -463,7 +463,7 @@ const Index = () => {
                     alt="NutriScoop Store" 
                     className="w-full h-full object-cover" 
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
                     }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
@@ -571,7 +571,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="py-8 sm:py-12 bg-nutri-green text-white">
-        <div className="responsive-container">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 pb-8 sm:pb-10 border-b border-white/20">
             <div>
               <h4 className="font-bold text-xl sm:text-2xl mb-4 sm:mb-6">NutriScoop</h4>
@@ -626,7 +626,7 @@ const Index = () => {
           </div>
           <div className="pt-6 sm:pt-10 text-center text-white/80">
             <p className="text-base sm:text-lg">&copy; 2025 NutriScoop. All rights reserved.</p>
-        </div>
+          </div>
         </div>
       </footer>
     </div>

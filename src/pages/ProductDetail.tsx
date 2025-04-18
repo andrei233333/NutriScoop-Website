@@ -99,11 +99,11 @@ const ProductDetail = () => {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-nutri-orange/10 rounded-full z-0"></div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-nutri-green/10 rounded-full z-0"></div>
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl mx-auto max-w-md">
-                <img 
-                  src={product.image}
-                  alt={product.title} 
+              <img
+                src={product.image}
+                alt={product.title}
                   className="w-full h-auto object-cover max-h-[400px]"
-                />
+              />
               </div>
             </div>
             
@@ -290,7 +290,7 @@ const ProductDetail = () => {
           <div className="pt-10 text-center text-white/80">
             <p className="text-lg">&copy; 2025 NutriScoop. All rights reserved.</p>
           </div>
-        </div>
+      </div>
       </footer>
     </div>
   );
