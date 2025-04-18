@@ -39,21 +39,23 @@ const Index = () => {
                 PLANT-BASED • NUTRITIOUS • DELICIOUS
               </div>
               
-              <h1 className="heading-responsive mb-4 sm:mb-6 leading-tight center-text">
-                <span className="text-nutri-green">NutriScoop:</span> <span className="text-nutri-orange">Premium</span> Plant-Based Ice Cream
-          </h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-nutri-green leading-tight text-center">
+                <span className="text-nutri-green">NutriScoop:</span> Premium<br />
+                <span className="text-nutri-orange">Vegan Ice Cream</span>
+              </h1>
               
               <div className="center-content mb-6 sm:mb-10">
                 <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
               </div>
               
-              <p className="text-responsive text-gray-700 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed center-text">
-                Experience ice cream reinvented – silky smooth, impossibly creamy, and crafted purely from plants. Savor every spoonful of bliss while feeling good about your choices for your body and the planet.
+              <p className="text-responsive text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed text-center">
+                Experience ice cream reinvented – silky smooth, impossibly creamy, and crafted purely from plants. 
+                <span className="block mt-2">Savor every spoonful of bliss while feeling good about your choices for your body and the planet.</span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-                <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
-                  <Link to="/products">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-base sm:text-lg px-8 sm:px-10 py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
+                  <Link to="/products" className="flex items-center justify-center">
                     Explore Our Flavors <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -61,7 +63,7 @@ const Index = () => {
                   onClick={() => scrollToSection('products')}
                   variant="outline" 
                   size="lg" 
-                  className="border-nutri-orange text-nutri-orange hover:bg-nutri-orange/10 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-full w-full sm:w-auto"
+                  className="border-nutri-orange text-nutri-orange hover:bg-nutri-orange/10 text-base sm:text-lg px-8 sm:px-10 py-6 rounded-full w-full sm:w-auto"
                 >
                   See Our Products
                 </Button>
