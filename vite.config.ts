@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/NutriScoop-Website/',
+  base: mode === 'production' ? '/NutriScoop-Website/' : '/',
   server: {
     host: "::",
     port: 8080,
