@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/NutriScoop-Website/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/NutriScoop-Website/' : '/',
   server: {
     host: true,
     port: 8080,
@@ -16,4 +16,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));
