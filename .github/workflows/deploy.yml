@@ -30,6 +30,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          VITE_BASE_URL: '/NutriScoop-Website/'
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
