@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://andrei233333.github.io/NutriScoop-Website/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +11,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "preview:prod": "vite preview --mode production",
-    "deploy:gcp": "npm run build && gsutil -m rsync -R dist gs://nutriscoop-website"
+    "deploy:gcp": "npm run build && gsutil -m rsync -R dist gs://nutriscoop-website",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
