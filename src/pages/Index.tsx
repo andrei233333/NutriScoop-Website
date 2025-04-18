@@ -26,36 +26,38 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen center-content overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/hero-bg.jpg')] bg-cover bg-center opacity-10 z-0"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/hero-bg.jpg')] bg-cover bg-center opacity-5 z-0"></div>
         
         {/* Decorative elements */}
-        <div className="absolute top-1/4 right-1/4 w-16 sm:w-20 h-16 sm:h-20 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-1/3 left-1/4 w-12 sm:w-16 h-12 sm:h-16 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-20 sm:w-24 h-20 sm:h-24 bg-nutri-green/10 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-16 sm:w-20 h-16 sm:h-20 bg-nutri-orange/10 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-12 sm:w-16 h-12 sm:h-16 bg-nutri-green/15 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
         
-        <div className="container max-w-7xl relative z-10">
-          <div className="flex flex-col items-center justify-center">
+        <div className="container max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
             <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="center-text inline-block px-3 sm:px-5 py-1.5 sm:py-2 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-xs sm:text-sm mb-4 sm:mb-6">
-                PLANT-BASED • NUTRITIOUS • DELICIOUS
+              <div className="inline-block px-4 py-2 bg-nutri-green/10 rounded-full text-nutri-green font-medium text-sm sm:text-base mb-6 sm:mb-8">
+                VEGAN • NUTRITIOUS • DELICIOUS
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-nutri-green leading-tight text-center">
-                <span className="text-nutri-green">NutriScoop:</span> Premium<br />
-                <span className="text-nutri-orange">Vegan Ice Cream</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 sm:mb-8">
+                <span className="text-nutri-green">NutriScoop:</span><br />
+                Premium <span className="text-nutri-orange">Vegan Ice Cream</span>
               </h1>
               
-              <div className="center-content mb-6 sm:mb-10">
-                <div className="h-1 w-16 sm:w-20 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
+              <div className="flex justify-center mb-8 sm:mb-10">
+                <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-nutri-green to-nutri-orange rounded-full"></div>
               </div>
               
-              <p className="text-responsive text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed text-center">
-                Experience ice cream reinvented – silky smooth, impossibly creamy, and crafted purely from plants. 
-                <span className="block mt-2">Savor every spoonful of bliss while feeling good about your choices for your body and the planet.</span>
+              <p className="text-lg sm:text-xl text-gray-700 mb-10 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
+                Experience ice cream reinvented – silky smooth, impossibly creamy,<br className="hidden sm:block" />
+                and crafted purely from plants. Savor every spoonful of bliss while<br className="hidden sm:block" />
+                feeling good about your choices for your body and the planet.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-base sm:text-lg px-8 sm:px-10 py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
-                  <Link to="/products" className="flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Button asChild size="lg" className="bg-nutri-green hover:bg-nutri-green/90 text-white text-base sm:text-lg px-10 py-6 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
+                  <Link to="/products" className="flex items-center justify-center whitespace-nowrap">
                     Explore Our Flavors <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -63,7 +65,7 @@ const Index = () => {
                   onClick={() => scrollToSection('products')}
                   variant="outline" 
                   size="lg" 
-                  className="border-nutri-orange text-nutri-orange hover:bg-nutri-orange/10 text-base sm:text-lg px-8 sm:px-10 py-6 rounded-full w-full sm:w-auto"
+                  className="border-2 border-nutri-orange text-nutri-orange hover:bg-nutri-orange/10 text-base sm:text-lg px-10 py-6 rounded-full w-full sm:w-auto whitespace-nowrap"
                 >
                   See Our Products
                 </Button>
@@ -76,12 +78,12 @@ const Index = () => {
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-10"
           onClick={() => scrollToSection('features')}
         >
-          <div className="bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-xl transition-all">
+          <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:bg-white">
             <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 text-nutri-green" />
           </div>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-nutri-beige to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-nutri-beige to-transparent"></div>
       </section>
 
       {/* Features Section */}
